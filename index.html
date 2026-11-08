@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aufaa Ishaam Firaas — Portfolio</title>
+    <meta name="description" content="Portofolio pribadi web developer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="loader" role="status" aria-label="Memuat Portofolio">
+        <div class="ld-box">
+            <svg class="ld-ring" viewBox="0 0 120 120" aria-hidden="true">
+                <circle cx="60" cy="60" r="52" class="ld-bg" />
+                <circle cx="60" cy="60" r="52" class="ld-fg" id="ldFg" />
+            </svg>
+            <span class="ld-logo" id="ldLogo"></span>
+        </div>
+        <p class="ld-name" id="ldName"></p>
+        <p class="ld-pct mono"><span id="ldPct">0</span>%</p>
+    </div>
+    <noscript>
+        <style>
+            #loader {
+                display: none !important
+            }
+        </style>
+    </noscript>
+    <div id="progress"></div><canvas id="particles" aria-hidden="true"></canvas>
+    <div id="glow" aria-hidden="true"></div>
+    <header id="nav">
+        <nav class="wrap nav-in" aria-label="Navigasi utama">
+            <a href="#home" class="logo" id="logo"></a>
+            <span id="here" class="here mono" aria-live="polite">Home</span>
+            <button id="burger" aria-label="Buka menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#lab">Lab</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#connect">Media Social</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <p class="badge"><span class="dot"></span>AVAILABLE FOR PROJECTS</p>
+                    <h1>Building Digital Experiences Through Code.</h1>
+                    <p class="owner" id="ownerName"></p>
+                    <p class="typed mono" aria-hidden="true"><span id="typed"></span><i class="caret"></i></p>
+                    <p class="lead" id="heroDesc"></p>
+                    <div class="row"><a class="btn primary" href="#projects">Explore My Work</a><a class="btn"
+                            href="#contact">Let's Collaborate</a></div>
+                    <div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span></div>
+                    <div class="stats" id="heroStats"></div>
+                </div>
+                <div class="orbit-wrap" id="orbitWrap"><svg class="orbit" viewBox="0 0 300 300" aria-hidden="true">
+                        <g fill="none" stroke="#3987FF" stroke-width="1">
+                            <circle cx="150" cy="150" r="60" />
+                            <circle cx="150" cy="150" r="100" stroke-dasharray="4 6" class="spin" />
+                            <circle cx="150" cy="150" r="140" stroke="#00E5FF" stroke-opacity=".4" />
+                            <path d="M10 150h50M240 150h50M150 10v50M150 240v50" stroke="#00E5FF" />
+                        </g>
+                        <circle r="5" fill="#00E5FF" class="sat">
+                            <animateMotion dur="9s" repeatCount="indefinite" path="M150 50a100 100 0 1 1 -1 0" />
+                        </circle><text x="150" y="156" text-anchor="middle" fill="#F4F7FF" font-family="JetBrains Mono"
+                            font-size="16">&lt;/&gt;</text>
+                    </svg>
+                    <div class="ring">
+                        <div class="node" style="--a:0deg"><button type="button" data-t="HTML5" aria-label="HTML5"><i
+                                    class="fa-brands fa-html5"></i></button></div>
+                        <div class="node" style="--a:90deg"><button type="button" data-t="CSS3" aria-label="CSS3"><i
+                                    class="fa-brands fa-css3-alt"></i></button></div>
+                        <div class="node" style="--a:180deg"><button type="button" data-t="JavaScript"
+                                aria-label="JavaScript"><i class="fa-brands fa-js"></i></button></div>
+                        <div class="node" style="--a:270deg"><button type="button" data-t="Git" aria-label="Git"><i
+                                    class="fa-brands fa-git-alt"></i></button></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="sec">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> About</p>
+                <h2>About</h2>
+                <div class="cols about-cols">
+                    <div class="glass about-card">
+                        <h3 class="ab-h"><i class="fa-solid fa-user" aria-hidden="true"></i> Tentang Saya</h3>
+                        <p id="aboutText" class="ab-text"></p>
+                        <blockquote class="quote">
+                            <h4><i class="fa-solid fa-quote-left" aria-hidden="true"></i> Filosofi coding</h4>
+                            <p id="philosophy"></p>
+                        </blockquote>
+                    </div>
+                    <div class="glass about-card">
+                        <figure class="photo">
+                            <div class="photo-slot" id="photoSlot"><i class="fa-solid fa-user" aria-hidden="true"></i>
+                            </div>
+                        </figure>
+                        <div class="prof-head"><span class="avatar" id="avatar" aria-hidden="true"></span>
+                            <div><b id="profName"></b><span class="muted">Web Developer</span></div>
+                        </div>
+                        <dl id="profile" class="prof"></dl>
+                    </div>
+                </div>
+                <h3 class="sub ab-h"><i class="fa-solid fa-route" aria-hidden="true"></i> Perjalanan belajar</h3>
+                <div class="timeline" id="journey"></div>
+            </div>
+        </section>
+
+        <section id="skills" class="sec alt">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Skills</p>
+                <h2>Technical Skills</h2>
+                <p class="muted legend"><span class="st ok inl"><i class="fa-solid fa-check"></i></span>sudah mahir<span
+                        class="st no inl"><i class="fa-solid fa-xmark"></i></span>masih belajar</p>
+                <div class="filters" id="skillFilters"></div>
+                <div class="grid" id="skillGrid"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="sec">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Projects</p>
+                <h2>Featured Projects</h2>
+                <div class="filters" id="projFilters"></div>
+                <div class="grid" id="projGrid"></div>
+            </div>
+        </section>
+
+        <section id="awards" class="sec alt">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Awards</p>
+                <h2>Awards &amp; Achievements</h2>
+                <div id="spotlight"></div>
+                <div class="stats" id="awardStats"></div>
+                <div class="filters" id="awardFilters"></div>
+                <div class="grid" id="awardGrid"></div>
+                <details class="glass tryfile">
+                    <summary>Pratinjau file sertifikat lokal</summary>
+                    <p class="muted">Pratinjau ini hanya di browser Anda dan tidak menyimpan file. Untuk menampilkannya
+                        permanen, simpan file di <code>assets/certificates/</code> lalu isi <code>certificateUrl</code>.
+                    </p>
+                    <input type="file" id="fileIn" accept="image/jpeg,image/png,image/webp,application/pdf"
+                        aria-label="Pilih file sertifikat">
+                </details>
+            </div>
+        </section>
+
+        <section id="certificates" class="sec">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Certificates</p>
+                <h2>Certificates</h2>
+                <p class="muted" style="margin:-8px 0 18px">Bukti sertifikat asli dari file yang Anda simpan sendiri.
+                </p>
+                <div class="grid" id="certGrid"></div>
+            </div>
+        </section>
+
+        <section id="services" class="sec">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Services</p>
+                <h2>Services</h2>
+                <p class="muted legend"><span class="st ok inl"><i class="fa-solid fa-check"></i></span>tersedia<span
+                        class="st no inl"><i class="fa-solid fa-xmark"></i></span>belum tersedia</p>
+                <div class="grid" id="svcGrid"></div>
+            </div>
+        </section>
+
+        <section id="lab" class="sec alt">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Lab</p>
+                <h2>Interactive Technology Lab</h2>
+                <div class="row"><button class="btn" id="fxToggle" aria-pressed="true">Efek visual: ON</button><button
+                        class="btn" id="glowToggle" aria-pressed="true">Cursor glow: ON</button><span
+                        class="glass clock mono" id="clock" aria-label="Jam lokal"></span></div>
+                <div class="cols">
+                    <div class="glass">
+                        <h3>Terminal (simulasi)</h3>
+                        <div id="term" class="term mono" role="log" aria-live="polite"></div>
+                        <form id="termForm" autocomplete="off"><label class="sr" for="termIn">Perintah</label><input
+                                id="termIn" class="mono" placeholder="ketik: help"></form>
+                    </div>
+                    <div class="glass">
+                        <h3>Sirkuit &amp; kartu tilt</h3>
+                        <svg viewBox="0 0 300 150" class="circuit" role="group" aria-label="Papan sirkuit interaktif">
+                            <path class="flow" d="M60 30H120V65M240 30H180V65M60 120H120V85M240 120H180V85" fill="none"
+                                stroke="#3987FF" stroke-width="1.5" />
+                            <rect x="120" y="60" width="60" height="30" rx="5" fill="#0C1220" stroke="#00E5FF" /><text
+                                x="150" y="79" text-anchor="middle" fill="#00E5FF" font-size="10"
+                                font-family="JetBrains Mono">CORE</text>
+                            <g class="chip" tabindex="0" role="button" data-t="HTML5" aria-label="Chip HTML5">
+                                <rect x="20" y="15" width="40" height="30" rx="5" /><text x="40" y="34">HTML</text>
+                            </g>
+                            <g class="chip" tabindex="0" role="button" data-t="CSS3" aria-label="Chip CSS3">
+                                <rect x="240" y="15" width="40" height="30" rx="5" /><text x="260" y="34">CSS</text>
+                            </g>
+                            <g class="chip" tabindex="0" role="button" data-t="JavaScript" aria-label="Chip JavaScript">
+                                <rect x="20" y="105" width="40" height="30" rx="5" /><text x="40" y="124">JS</text>
+                            </g>
+                            <g class="chip" tabindex="0" role="button" data-t="Git" aria-label="Chip Git">
+                                <rect x="240" y="105" width="40" height="30" rx="5" /><text x="260" y="124">GIT</text>
+                            </g>
+                        </svg>
+                        <p class="muted">Klik atau tekan Enter pada chip untuk mengaktifkannya.</p>
+                        <div class="tilt glass" tabindex="0"><span class="mono">Tilt 3D — gerakkan kursor</span></div>
+                        <p class="muted mono">Status sistem (SIMULASI): CPU 42% · MEM 61% · NET OK</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="sec">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Experience</p>
+                <h2>Experience &amp; Journey</h2>
+                <div class="timeline" id="expList"></div>
+                <div class="glass fb" id="feedback">
+                    <h3>Komentar &amp; Rating Kepuasan</h3>
+                    <form id="fbForm" novalidate>
+                        <label for="fbName">Nama</label><input id="fbName" maxlength="40" autocomplete="name"><small
+                            class="err" id="e-fbName"></small>
+                        <fieldset class="stars">
+                            <legend>Rating kepuasan (1–5 bintang)</legend>
+                            <div class="starrow"><input type="radio" name="rate" id="r5" value="5" class="sr"><label
+                                    for="r5" title="5 bintang" aria-label="5 bintang">★</label><input type="radio"
+                                    name="rate" id="r4" value="4" class="sr"><label for="r4" title="4 bintang"
+                                    aria-label="4 bintang">★</label><input type="radio" name="rate" id="r3" value="3"
+                                    class="sr"><label for="r3" title="3 bintang" aria-label="3 bintang">★</label><input
+                                    type="radio" name="rate" id="r2" value="2" class="sr"><label for="r2"
+                                    title="2 bintang" aria-label="2 bintang">★</label><input type="radio" name="rate"
+                                    id="r1" value="1" class="sr"><label for="r1" title="1 bintang"
+                                    aria-label="1 bintang">★</label></div>
+                        </fieldset><small class="err" id="e-fbRate"></small>
+                        <label for="fbMsg">Komentar</label><textarea id="fbMsg" rows="3"
+                            maxlength="400"></textarea><small class="err" id="e-fbMsg"></small>
+                        <div class="hp" aria-hidden="true"><label>Website<input id="fbWeb" tabindex="-1"
+                                    autocomplete="off"></label></div><button class="btn primary" type="submit">Kirim
+                            Komentar</button>
+                        <p class="muted" id="fbNote"></p>
+                    </form>
+                    <div class="fb-sum" id="fbSum"></div>
+                    <div id="fbList"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="connect" class="sec alt">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Media Sosial</p>
+                <h2>Akun Media Sosial Saya</h2>
+                <div class="grid social" id="socialGrid"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="sec alt">
+            <div class="wrap">
+                <p class="loc mono"><a href="#home">Menu</a> <span aria-hidden="true">/</span> Contact</p>
+                <h2>Contact</h2>
+                <div class="cols">
+                    <form id="form" class="glass" novalidate>
+                        <label for="fn">Nama</label><input id="fn" name="name" required><small class="err"
+                            id="e-fn"></small>
+                        <label for="fe">Email</label><input id="fe" name="email" type="email" required><small
+                            class="err" id="e-fe"></small>
+                        <label for="fs">Subjek</label><input id="fs" name="subject" required><small class="err"
+                            id="e-fs"></small>
+                        <label for="fm">Pesan</label><textarea id="fm" name="message" rows="5"
+                            required></textarea><small class="err" id="e-fm"></small>
+                        <button class="btn primary" type="submit">Kirim Pesan</button>
+                        <p class="muted" id="formNote"></p>
+                    </form>
+                    <div>
+                        <div class="glass">
+                            <h3>Email</h3>
+                            <p id="emailText" class="mono"></p><button class="btn" id="copyEmail">Salin email</button>
+                        </div>
+                        <div class="glass mt">
+                            <h3>Lokasi</h3>
+                            <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span id="locName"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap foot">
+            <div><strong id="footName"></strong>
+                <p class="muted">© <span id="year"></span> Semua hak dilindungi.</p>
+            </div>
+            <div class="foot-links" id="footLinks"></div>
+            <div class="foot-social" id="footSocial"></div>
+            <button class="btn" id="toTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden>
+        <div class="m-box glass">
+            <div class="m-head">
+                <h3 id="mTitle"></h3><button class="btn" id="mClose" aria-label="Tutup">✕</button>
+            </div>
+            <div class="m-body" id="mBody"></div>
+            <div class="row" id="mActions"></div>
+        </div>
+    </div>
+    <div class="music" id="music" hidden>
+        <button type="button" id="musicPrev" class="mbtn" aria-label="Lagu sebelumnya"><i
+                class="fa-solid fa-backward-step"></i></button>
+        <button type="button" id="musicBtn" aria-pressed="false" aria-label="Putar musik latar"><i
+                class="fa-solid fa-music"></i></button>
+        <button type="button" id="musicNext" class="mbtn" aria-label="Lagu berikutnya"><i
+                class="fa-solid fa-forward-step"></i></button>
+        <input type="range" id="musicVol" min="0" max="100" value="40" aria-label="Volume musik">
+        <span class="eq" aria-hidden="true"><b></b><b></b><b></b></span>
+        <span id="musicTitle" class="muted mono"></span>
+    </div>
+    <audio id="bgm" preload="auto" loop></audio>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
